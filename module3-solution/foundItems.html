@@ -1,0 +1,9 @@
+<h3 ng-if="items.searchQuery()">Your search: {{ items.searchTerm }}</h3>
+  <h3 ng-if="items.nothingFound()">Nothing found</h3>
+  <ol class="row table-row">
+    <li ng-repeat="item in items.found" class="col-sm-6">
+      <h4> {{ item.name }} </h4>
+      <p> {{ item.description }} </p>
+      <button class="btn-remove" ng-click="items.onRemove({index: $index})">Don't want this one!</button>
+    </li>
+  </ol>
